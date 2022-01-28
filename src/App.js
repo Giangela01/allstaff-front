@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 import './App.css';
@@ -40,7 +39,7 @@ function App() {
     };
     //Delete with DELETE Employee
     const deleteEmployee = async (id) => {
-        await fetch(URL + id, {
+        await fetch(URL + `/` + id, {
             method: "delete"
         });
         getEmployee();

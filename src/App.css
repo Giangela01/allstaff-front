@@ -21,3 +21,8 @@ font-family: 'Ubuntu', sans-serif; */
   font-family: 'Ubuntu', sans-serif;
   color: #FFF0CE;
 }
+/* table */
+.main-table {
+  margin: 10px 50px;
+  font-family: 'Ubuntu', sans-serif;
+}
