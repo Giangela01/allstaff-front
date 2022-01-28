@@ -26,3 +26,16 @@ font-family: 'Ubuntu', sans-serif; */
   margin: 10px 50px;
   font-family: 'Ubuntu', sans-serif;
 }
+/* modal */
+
+.modal-view {
+  border: solid 5px #383838;
+  padding: 25px;
+  text-align: center;
+}
+.modal-name {
+  font-family: 'Playfair Display', serif;
+}
+p {
+  font-family: 'Ubuntu', sans-serif;
+}
