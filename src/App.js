@@ -59,6 +59,7 @@ function App() {
       </ Route>
       <Route exact path="/add-new-employee">
       <NewEmployee
+        Employee={Employee}
         addEmployee={addEmployee}
         />
       </ Route>
