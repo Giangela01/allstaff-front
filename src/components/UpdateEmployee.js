@@ -1,55 +1,32 @@
 import React, { useState } from 'react';
 
+function UpdateEmployee(props) {
+    const id = parseInt(props.match.params.id)
+    const employee = props.Employee
+    const staff = employee.find((emp) => {return emp.id === id})
 
-function NewEmployee(props) {
-    const [newForm, setNewForm] = useState({
-        lastName: "",
-        firstName: "",
-        email: "",
-        officePhone: "",
-        dob: "",
-        department: "",
-        directSupervisor: "",
-        jobTitle: "",
-        jobStatus: "",
-        startDate: "",
-        endDate: "",
-        probationPeriod: "",
-        salary: "",
-      });
-      const handleChange = (event) => {
-        setNewForm({ ...newForm, [event.target.name]: event.target.value });
-      };
+    const [editForm, setEditForm] = useState(staff);
 
-      const handleSubmit = (event) => {
-        event.preventDefault();
-        props.addEmployee(newForm);
-        setNewForm({
-            lastName: "",
-            firstName: "",
-            email: "",
-            officePhone: "",
-            dob: "",
-            department: "",
-            directSupervisor: "",
-            jobTitle: "",
-            jobStatus: "",
-            startDate: "",
-            endDate: "",
-            probationPeriod: "",
-            salary: "",
-        });
-      };
-      
+    const handleChange = event => {
+        setEditForm({ ...editForm, [event.target.name]: event.target.value })
+      }
+    const handleSubmit = event => {
+        event.preventDefault()
+        props.updateEmployee(editForm, staff.id)
+        props.history.push("/")
+      }
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
+            <h3>Update Employee Information:</h3>
             <div className="mb-3">
                 <label htmlFor="LastName" className="form-label">Employee Last Name</label>
                 <input 
                 type="text" 
-                value={newForm.lastName}
+                value={editForm.lastName}
                 name="lastName"
+                placeholder={staff.lastName}
                 onChange={handleChange}
                 className="form-control" />
             </div>
@@ -57,8 +34,9 @@ function NewEmployee(props) {
                 <label htmlFor="FirstName" className="form-label">Employee First Name</label>
                 <input 
                 type="text" 
-                value={newForm.firstName}
+                value={editForm.firstName}
                 name="firstName"
+                placeholder={staff.firstName}
                 onChange={handleChange}
                 className="form-control" />
             </div>
@@ -66,114 +44,117 @@ function NewEmployee(props) {
                 <label htmlFor="email" className="form-label">Employee Email</label>
                 <input 
                 type="text" 
-                value={newForm.email}
+                value={editForm.email}
                 name="email"
+                placeholder={staff.email}
                 onChange={handleChange}
-                placeholder='jsmith@example.com'
                 className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="PhoneNumber" className="form-label">Phone Number</label>
                 <input 
                 type="text" 
-                value={newForm.officePhone}
+                value={editForm.officePhone}
                 name="officePhone"
                 onChange={handleChange}
-                placeholder='000-000-0000'
+                placeholder={staff.officePhone}
                 className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="dob" className="form-label">Date of Birth</label>
                 <input 
                 type="text" 
-                value={newForm.dob}
+                value={editForm.dob}
                 name="dob"
                 onChange={handleChange}
-                placeholder='YYYY-MM-DD'
+                placeholder={staff.dob}
                 className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="department" className="form-label">Department</label>
                 <input 
                 type="text" 
-                value={newForm.department}
+                value={editForm.department}
                 name="department"
                 onChange={handleChange}
-                placeholder='e.g. Accounting, Administration, Marketing'
+                placeholder={staff.department}
                 className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="directSupervisor" className="form-label">Direct Supervisor</label>
                 <input 
                 type="text" 
-                value={newForm.directSupervisor}
+                value={editForm.directSupervisor}
                 name="directSupervisor"
                 onChange={handleChange}
+                placeholder={staff.directSupervisor}
                 className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="jobTitle" className="form-label">Job Title</label>
                 <input 
                 type="text" 
-                value={newForm.jobTitle}
+                value={editForm.jobTitle}
                 name="jobTitle"
                 onChange={handleChange}
+                placeholder={staff.jobTitle}
                 className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="jobStatus" className="form-label">Job Status</label>
                 <input 
                 type="text" 
-                value={newForm.jobStatus}
+                value={editForm.jobStatus}
                 name="jobStatus"
                 onChange={handleChange}
-                placeholder='e.g. Full Time, Part Time, Contractual'
+                placeholder={staff.jobStatus}
                 className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="startDate" className="form-label">Start Date</label>
                 <input 
                 type="text" 
-                value={newForm.startDate}
+                value={editForm.startDate}
                 name="startDate"
                 onChange={handleChange}
-                placeholder='YYYY-MM-DD'
+                placeholder={staff.startDate}
                 className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="endDate" className="form-label">Expected End Date</label>
                 <input 
                 type="text" 
-                value={newForm.endDate}
+                value={editForm.endDate}
                 name="endDate"
                 onChange={handleChange}
-                placeholder='YYYY-MM-DD'
+                placeholder={staff.endDate}
                 className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="probationPeriod" className="form-label">Probation End Date</label>
                 <input 
                 type="text" 
-                value={newForm.probationPeriod}
+                value={editForm.probationPeriod}
                 name="probationPeriod"
                 onChange={handleChange}
-                placeholder='YYYY-MM-DD'
+                placeholder={staff.probationPeriod}
                 className="form-control" />
             </div>
             <div className="mb-3">
                 <label htmlFor="salary" className="form-label">Current Salary</label>
                 <input 
                 type="text" 
-                value={newForm.salary}
+                value={editForm.salary}
                 name="salary"
                 onChange={handleChange}
-                placeholder='00,000.00'
+                placeholder={staff.salary}
                 className="form-control" />
             </div>
-                <input id='submit-btn' type="submit" value="Add New Employee" />
+                <input id='submit-btn' type="submit" value="Update" />
             </form>
+            
         </div>
     );
-};
+}
 
-export default NewEmployee;
+export default UpdateEmployee;

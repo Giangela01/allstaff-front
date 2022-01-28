@@ -16,7 +16,7 @@ function AllStaff (props) {
                <td>{staff.department}</td>
                <td>
                 <i className='bi bi-eyeglasses' onClick={() => {setSelectedEmployee(staff);setModalIsOpen(true)}}></i>&nbsp; &nbsp; &nbsp;
-                    <Link to={`/update-employee`}><i className='bi bi-pencil-square'></i>&nbsp; &nbsp; &nbsp;</Link>
+                    <Link to={`/employee/${staff.id}`}><i className='bi bi-pencil-square'></i>&nbsp; &nbsp; &nbsp;</Link>
                    <Link to={`/`}>
                     <i className='bi bi-person-dash-fill'id="delete" onClick={() => props.deleteEmployee(staff.id)}></i>
                     </Link>

@@ -47,7 +47,7 @@ input[type='submit'], #submit-btn {
 }
 form {
   font-family: 'Ubuntu', sans-serif;
-  margin: 70px;
+  margin: 70px 90px;
 }
 .form-control {
   font-size: 15px;

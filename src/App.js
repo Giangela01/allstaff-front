@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import AllStaff from './components/AllStaff'
 import NewEmployee from './components/NewEmployee'
+import UpdateEmployee from './components/UpdateEmployee'
 
 
 
@@ -53,7 +54,6 @@ function App() {
       <Route exact path="/">
       <AllStaff 
         Employee={Employee}
-        updateEmployee={updateEmployee}
         deleteEmployee={deleteEmployee}
         />
       </ Route>
@@ -63,6 +63,16 @@ function App() {
         addEmployee={addEmployee}
         />
       </ Route>
+      <Route
+       path="/employee/:id"
+       render={(rp) => (
+        <UpdateEmployee
+          {...rp}
+          Employee={Employee}
+          updateEmployee={updateEmployee}
+          />
+          )}
+          />
     </Switch>
   </>
   );
