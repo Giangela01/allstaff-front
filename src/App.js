@@ -3,19 +3,19 @@ import { Switch, Route } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
 import AllStaff from './components/AllStaff'
-import NewEmployee from './pages/NewEmployee'
+import NewEmployee from './components/NewEmployee'
+
 
 
 
 function App() {
       const [Employee, setEmployee] = useState(null);
-      const URL = "http://allstaff-backend.herokuapp.com/api/employees"
+      const URL = "https://gt-staff-backend.herokuapp.com/employees/"
       const getEmployee = async () => {
-        const response = await fetch(URL);
+      const response = await fetch(URL);
         const data = await response.json();
         setEmployee(data);
       };
-      //Add Employee
       const addEmployee = async (mark) => {
         await fetch(URL, {
             method: "post",
@@ -39,7 +39,7 @@ function App() {
     };
     //Delete with DELETE Employee
     const deleteEmployee = async (id) => {
-        await fetch(URL + `/` + id, {
+        await fetch(URL + id, {
             method: "delete"
         });
         getEmployee();

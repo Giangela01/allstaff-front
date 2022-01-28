@@ -39,3 +39,16 @@ font-family: 'Ubuntu', sans-serif; */
 p {
   font-family: 'Ubuntu', sans-serif;
 }
+/* Form */
+input[type='submit'], #submit-btn {
+  background-color: #D55534;
+  border: #D55534;
+  color: white;
+}
+form {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 70px;
+}
+.form-control {
+  font-size: 15px;
+}
