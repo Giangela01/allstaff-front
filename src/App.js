@@ -59,7 +59,7 @@ function App() {
         deleteEmployee={deleteEmployee}
         />
       </ Route>
-      <Route exact path="/add-new-employee">
+      <Route exact path="/addemployee">
       <NewEmployee
         Employee={Employee}
         addEmployee={addEmployee}
