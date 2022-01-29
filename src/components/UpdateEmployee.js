@@ -150,9 +150,9 @@ function UpdateEmployee(props) {
                 placeholder={staff.salary}
                 className="form-control" />
             </div>
-                <input id='submit-btn' type="submit" value="Update" />
+                <input id='submit-btn' type="submit" value="Update" /> &nbsp; &nbsp;
+                <button id='submit-btn'><a id='home-btn' href="/">Cancel</a></button>
             </form>
-            
         </div>
     );
 }

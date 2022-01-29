@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Modal from 'react-modal'
+import Nav from './Nav';
 
 Modal.setAppElement('#root')
 
@@ -27,8 +28,11 @@ function AllStaff (props) {
     const loading = () => {
         return <tr><td>Loading...</td></tr>
     };
-    return ( 
-        <div className='main-table'>
+    return (
+        <div className='container'>
+        <div className='row'>
+        <Nav /> 
+        <div className='main-table col-sm-9'>
             <table className='table table-striped table-sm'>
                 <thead>
                     <tr>
@@ -71,6 +75,8 @@ function AllStaff (props) {
                 </tbody>
             </table>
         </div>
+    </div>
+    </div>
     )
 };
 

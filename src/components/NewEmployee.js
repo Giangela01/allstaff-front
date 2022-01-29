@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Nav from './Nav';
 
 
 function NewEmployee(props) {
@@ -42,8 +43,12 @@ function NewEmployee(props) {
       };
       
     return (
-        <div>
+        <div className='container'>
+        <div className='row'>
+        <Nav /> 
+        <div className="col-sm-9">
             <form onSubmit={handleSubmit}>
+            <h3>Add Employee Information:</h3>
             <div className="mb-3">
                 <label htmlFor="LastName" className="form-label">Employee Last Name</label>
                 <input 
@@ -172,6 +177,8 @@ function NewEmployee(props) {
             </div>
                 <input id='submit-btn' type="submit" value="Add New Employee" />
             </form>
+        </div>
+        </div>
         </div>
     );
 };

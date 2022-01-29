@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+div.container {
+  padding: 0;
+}
+
 /* Fonts:
 font-family: 'Playfair Display', serif;
 font-family: 'Ubuntu', sans-serif; */
@@ -20,10 +24,11 @@ font-family: 'Ubuntu', sans-serif; */
 .h-title {
   font-family: 'Ubuntu', sans-serif;
   color: #FFF0CE;
+  font-size: 38px;
 }
 /* table */
 .main-table {
-  margin: 10px 50px;
+  margin: 40px 0;
   font-family: 'Ubuntu', sans-serif;
 }
 /* modal */
@@ -51,4 +56,22 @@ form {
 }
 .form-control {
   font-size: 15px;
+}
+
+.nav-style {
+  background-color: #D55534;
+  padding: 18px;
+  color: #383838;
+}
+.nav-link {
+  color: #383838;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+}
+
+.nav-link:hover {
+  color: white;
+}
+a#home-btn {
+  color:white;
 }

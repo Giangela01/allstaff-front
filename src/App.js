@@ -9,6 +9,7 @@ import UpdateEmployee from './components/UpdateEmployee'
 
 
 
+
 function App() {
       const [Employee, setEmployee] = useState(null);
       const URL = "https://gt-staff-backend.herokuapp.com/employees/"
@@ -50,6 +51,7 @@ function App() {
   return (
   <>
     <Header />
+    {/* <Nav /> */}
     <Switch>
       <Route exact path="/">
       <AllStaff 
