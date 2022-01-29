@@ -5,6 +5,7 @@ import Header from './components/Header';
 import AllStaff from './components/AllStaff'
 import NewEmployee from './components/NewEmployee'
 import UpdateEmployee from './components/UpdateEmployee'
+import Memo from './components/Memo';
 
 
 
@@ -51,7 +52,6 @@ function App() {
   return (
   <>
     <Header />
-    {/* <Nav /> */}
     <Switch>
       <Route exact path="/">
       <AllStaff 
@@ -65,6 +65,14 @@ function App() {
         addEmployee={addEmployee}
         />
       </ Route>
+      <Route 
+      path="/memo/:id" 
+      render={(rp) => (
+        <Memo
+        {...rp}
+        Employee={Employee}/>
+      )}
+      />
       <Route
        path="/employee/:id"
        render={(rp) => (

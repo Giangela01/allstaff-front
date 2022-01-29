@@ -75,3 +75,36 @@ form {
 a#home-btn {
   color:white;
 }
+
+#content {
+  padding: 15px 25px;
+  width: 587px;
+  height: 834px;
+  color: black;
+  font-family:'Times New Roman', Times, serif
+}
+.memo-header {
+  text-align: center;
+  margin: 30px 0;
+  font-family: 'Playfair Display', serif;
+  color: #D55534;
+}
+.memo-title {
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+.memo-font {
+  font-family:'Times New Roman', Times, serif
+}
+.signee{
+  margin: 45px 0 0 0;
+}
+
+td.table-memo {
+  margin: 0px;
+  padding: 0px;
+  border-bottom: none;
+}
+table.memo-table {
+  margin: 0px 0px 10px 45px;
+}
