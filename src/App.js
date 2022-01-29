@@ -53,7 +53,7 @@ function App() {
   <>
     <Header />
     <Switch>
-      <Route path="/">
+      <Route exact path="/">
       <AllStaff 
         Employee={Employee}
         deleteEmployee={deleteEmployee}
